@@ -1,4 +1,4 @@
-# README
+# TWITTER STOCK ANALYSIS PREDICTION APP
 
 This repository contains the necessary files for deploying a sentiment analysis-based stock price prediction application. The application uses a trained machine learning model to analyze sentiment from text data and predict stock prices.
 
