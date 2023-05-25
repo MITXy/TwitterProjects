@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            text-align: center;
+            margin-top: 30px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 5px;
+            font-size: 14px;
+        }
+        button {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+        #result {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Stock Price Prediction</h1>
+    <form id="predictionForm" action="/predict" method="get">
+        <label for="tweets">Enter tweets:</label><br>
+        <input type="text" id="tweets" name="tweets" placeholder="Enter tweets here"><br><br>
+        <button type="submit">Predict</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        const predictionForm = document.getElementById('predictionForm');
+        const resultDiv = document.getElementById('result');
+
+        predictionForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const tweetsInput = document.getElementById('tweets');
+            const tweets = tweetsInput.value.trim();
+            
+            if (tweets === '') {
+                alert('Please enter tweets.');
+                return;
+            }
+            
+            fetch(`/predict?tweets=${encodeURIComponent(tweets)}`)
+                .then(response => response.json())
+                .then(data => {
+                    const predictions = data.predictions;
+                    if (predictions.length > 0) {
+                        const result = `Predicted Stock Price: $${predictions[0]}`;
+                        resultDiv.innerText = result;
+                    } else {
+                        resultDiv.innerText = 'Prediction not available.';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    resultDiv.innerText = 'An error occurred during prediction.';
+                });
+        });
+    </script>
+</body>
+</html>
