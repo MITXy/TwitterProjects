@@ -5,9 +5,9 @@ This repository contains the necessary files for deploying a sentiment analysis-
 ## Files
 
 - `app.py`: This is the main Flask application file that handles the web server and API endpoints for the stock price prediction.
-- `model.joblib`: This file contains the pre-trained machine learning model that predicts stock prices based on sentiment analysis.
-- `index.html`: An HTML file that provides a user-friendly interface for inputting text data and displaying the predicted stock prices.
-- `notebook.ipynb`: An IPython Notebook file that contains the code and documentation for training the machine learning model and performing sentiment analysis.
+- `Stock_price_model.joblib`: This file contains the pre-trained machine learning model that predicts stock prices based on sentiment analysis.
+- `prediction.html`: An HTML file that provides a user-friendly interface for inputting text data and displaying the predicted stock prices.
+- `Twitter Stock Price from Sentiment Analysis.ipynb`: An IPython Notebook file that contains the code and documentation for training the machine learning model and performing sentiment analysis.
 
 ## Implementation
 
