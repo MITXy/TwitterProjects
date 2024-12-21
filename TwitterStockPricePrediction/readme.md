@@ -27,7 +27,7 @@ To deploy the application and run it locally, follow the steps mentioned in the 
 
 ## Additional Notes
 
-- The `notebook.ipynb` file provides detailed documentation and code for training the machine learning model and performing sentiment analysis. It can be useful for understanding the model's architecture and making modifications if needed.
+- The `Twitter Stock Price from Sentiment.ipynb` file provides detailed documentation and code for training the machine learning model and performing sentiment analysis. It can be useful for understanding the model's architecture and making modifications if needed.
 - If deploying the application on a cloud platform or server, make sure to configure the appropriate settings, such as environment variables, port numbers, and security considerations.
 - Feel free to explore and modify the HTML file (`index.html`) to customize the user interface according to your requirements.
 
